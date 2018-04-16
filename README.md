@@ -1,2 +1,9 @@
 # civic2clinvar
-extraction of CIViC variants into the clinvar submission format
+
+`civic2clinvar` is a python-based command line utility for extracting assertions and variants and translating them into ClinVar records.
+
+## Installation
+TODO
+
+## Usage
+TODO
