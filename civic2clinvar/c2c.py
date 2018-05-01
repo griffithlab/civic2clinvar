@@ -1,4 +1,4 @@
-from pycivic import civic
+from civicpy import civic
 import csv
 import logging
 
@@ -35,10 +35,10 @@ CLINVAR_FIELDS = [
 ]
 
 
-def assertions_to_clinvar_csv(assertion_ids, file='clinvar.csv', **kwargs):
+def assertions_to_clinvar_csv(assertion_ids, file, **kwargs):
 
     assertions = civic.get_assertions_by_ids(assertion_ids)
-    with open(file, 'w') as f:
+    with file as f:
         writer = csv.DictWriter(f, CLINVAR_FIELDS)
         writer.writeheader()
         for assertion in assertions:
