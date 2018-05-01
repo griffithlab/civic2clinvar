@@ -10,7 +10,21 @@ from civic2clinvar.c2c import assertions_to_clinvar_csv
                    'This option is mutually exclusive with the ASSERTION_IDS argument.')
 @click.option('-o', '--out', help="Output file (default: clinvar.csv), use '-' for STDOUT",
               type=click.File('w'), default='clinvar.csv')
+
+
 def main(out, assertion_ids=None, aid_file=None):
+    """This command generates a ClinVar-formatted csv file from a specified set of CIViC assertions.
+
+    ASSERTION_IDS are a comma-separated list of assertions, and accepts integer ranges. Example usage:
+
+    civic2clinvar 1,3-5
+
+    The above command outputs a ClinVar submission form describing CIViC assertions 1, 3, 4, and 5 to clinvar.csv
+    (the default output file). Output destination may be controlled with the --out option, detailed below.
+
+    CIViC assertions that are rejected or pending are skipped.
+    """
+
     logging.debug('Processing arguments')
     if aid_file and assertion_ids:
         logging.error("Expected one of assertion IDs or '--aid-file' option, not both.")
