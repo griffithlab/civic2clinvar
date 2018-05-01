@@ -6,7 +6,7 @@
 `$ pip install civic2clinvar`
 
 ## Usage
-```bash
+```
 $ civic2clinvar --help
 
 Usage: civic2clinvar [OPTIONS] ASSERTION_IDS
