@@ -1,1 +1,2 @@
-pycivic
+civicpy
+click
