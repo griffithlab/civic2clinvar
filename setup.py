@@ -24,7 +24,7 @@ setup(
     python_requires='~=3.6',
     entry_points={
         'console_scripts': [
-            'civic=civic2clinvar.cli:main'
+            'civic2clinvar=civic2clinvar.cli:main'
         ]
     },
 
