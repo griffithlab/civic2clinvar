@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='civic2clinvar',
-    version='0.0.1a1',
+    version='0.0.1a2',
     packages=['civic2clinvar'],
     url='https://github.com/griffithlab/civic2clinvar',
     license='MIT',
