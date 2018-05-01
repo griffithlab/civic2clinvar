@@ -42,8 +42,8 @@ def assertions_to_clinvar_csv(assertion_ids, file, **kwargs):
         writer = csv.DictWriter(f, CLINVAR_FIELDS)
         writer.writeheader()
         for assertion in assertions:
-            if assertion.status == 'rejected':
-                logging.warning(f'Skipping rejected assertion AID:{assertion.id}.')
+            if assertion.status != 'accepted':
+                logging.warning(f'Skipping {assertion.status} assertion AID:{assertion.id}.')
                 continue
             variant = assertion.variant
             record = dict()
