@@ -102,3 +102,6 @@ ENV/
 
 # jetbrains
 .ideas
+
+# test dir
+test/
