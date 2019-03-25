@@ -84,7 +84,8 @@ def assertions_to_clinvar_csv(assertion_ids, file, **kwargs):
                 logging.warning(msg)
                 continue
             record['Condition comment'] = kwargs.get('condition_comment', '')  # TODO: Resolve what is expected here
-            record['Clinical significance citation'] = ';'.join(variant.source_ids)
+            source_ids = ['{}:{}'.format(s.source_type, s.citation_id) for s in variant.evidence_sources]
+            record['Clinical significance citation'] = ';'.join(source_ids)
             record['Citations or URLs for clinical significance without database identifiers'] = '|'.join(
                 [x.site_link for x in variant.evidence_items])
             record['Comment on clinical significance'] = assertion.summary

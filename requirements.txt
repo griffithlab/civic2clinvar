@@ -1,2 +1,2 @@
-civicpy==0.0.1a4
+civicpy==0.0.3
 click
